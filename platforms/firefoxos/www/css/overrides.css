@@ -1,0 +1,47 @@
+.headline, .content {
+	padding: 0.4vh 2vh 0.4vh 2vh;
+	width: auto;
+	text-transform: none;
+}
+
+.headline, .original {
+	text-align: center;
+}
+
+.current {
+	height: 94vh;
+}
+
+.previous, .next, .ad {
+	height: 3vh;
+	font-size: 2vh;
+	white-space: nowrap;
+}
+
+.current .headline, .detail .headline {
+	height: 16vh;
+	font-size: 6vh;
+}
+
+.current .content, .detail .content {
+	font-size: 3vh;
+}
+
+.current .image, .detail .image {
+	width: 100vw;
+	max-width: 100vw;
+	max-height: 35vh;
+	overflow: hidden;;
+}
+
+.current .image .small, .detail .image .small {
+	width: 100vw;
+}
+
+.backup {
+	display: none;
+}
+
+.display {
+	display: block;
+}

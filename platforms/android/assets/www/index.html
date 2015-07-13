@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta http-equiv="Content-Security-Policy">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/overrides.css">
+        <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+        <!-- will use textfill when i am able to-->
+        <!--<script type="text/javascript" src="js/jquery.textfill.js"></script>-->
+        <!--<script type="text/javascript" src="js/index.js"></script>-->
+        <script type="text/javascript" src="js/overrides.js"></script>
+        <title>Trending News</title>
+    </head> 
+    <body>
+        <div data-role="page" id="home" class="home">
+            <div data-role="header" data-theme="b" class="small previous">
+                <span class="display">Welcome to Awesummly</span>
+                <span class="backup">Welcome to Awesummly</span>
+            </div>
+            <div data-role="main" data-theme="b" class="current">
+                <div class="image">
+                    <img src="">
+                </div>
+                <div class="headline">
+                    <span>News Headline</span>
+                </div>
+                <div class="content">
+                    <span>News Summary</span>
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" class="small next">
+                <span class="display">You have reached the end</span>
+                <span class="backup">You have reached the end</span>
+            </div>
+        </div>
+        <div data-role="page" data-theme="c" id="detail">
+            <div data-role="header" data-theme="b" class="small ad">
+                <ins class="adsbygoogle" data-ad-client="ca-pub-0789120323342278" data-ad-slot="1288109640"></ins>
+                <script>
+                    if(navigator.onLine) {
+                        var head = document.getElementsByTagName('head')[0];
+                        var js = document.createElement("script");
+                        js.async = true;
+                        js.src = "http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+                        head.appendChild(js);
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }
+                </script>
+            </div>
+            <div data-role="main" class="detail">
+                <div class="image">
+                    <img src="">
+                </div>
+                <div class="debug">
+                    <span>Temp Debug Area</span>
+                </div>
+                <div class="headline">
+                    <span>News Headline</span>
+                </div>
+                <div class="content">
+                    <span>News Summary</span>
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" class="small original">
+                <span>
+                    <a href="http://www.google.com" onclick="window.open(this.href, '_self', 'location=yes'); return false;">
+                        Open original in browser
+                    </a>
+                </span>
+            </div>
+        </div>
+    </body>
+</html>
