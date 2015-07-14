@@ -19,19 +19,33 @@
     </head> 
     <body>
         <div data-role="page" id="home" class="home">
+            <div data-role="panel" id="navpanel" data-theme="c"
+                 data-display="overlay" data-position="right">
+                <div data-role="controlgroup" data-corners="false">
+                    <a href="#" data-role="button">Business</a>
+                    <a href="#" data-role="button">Numbers</a>
+                    <a href="#" data-role="button">Money</a>
+                    <a href="#" data-role="button">People</a>
+                </div>
+            </div>
             <div data-role="header" data-theme="b" class="small previous">
                 <span class="display">Welcome to Awesummly</span>
                 <span class="backup">Welcome to Awesummly</span>
+                <a id="bars-button" data-icon="bars" data-mini="true" class="ui-btn-right" href="#navpanel"></a>
             </div>
             <div data-role="main" data-theme="b" class="current">
+                <div id="menu">
+                    <a href="">Option One</a><br/>
+                    <a href="">Option Two</a>
+                </div>
                 <div class="image">
                     <img src="">
                 </div>
                 <div class="headline">
-                    <span>News Headline</span>
+                    <span>Welcome to Awesummly</span>
                 </div>
                 <div class="content">
-                    <span>News Summary</span>
+                    <span>Awesummly is a News Summary Digest.</span>
                 </div>
             </div>
             <div data-role="footer" data-theme="b" class="small next">
@@ -69,9 +83,7 @@
             </div>
             <div data-role="footer" data-theme="b" class="small original">
                 <span>
-                    <a href="http://www.google.com" onclick="window.open(this.href, '_self', 'location=yes'); return false;">
-                        Open original in browser
-                    </a>
+                    Source : <a href="http://www.google.com" onclick="window.open(this.href, '_self', 'location=yes'); return false;"></a>
                 </span>
             </div>
         </div>

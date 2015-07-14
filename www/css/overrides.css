@@ -1,5 +1,6 @@
 body {
 	text-transform: none;
+	font-family: serif;
 }
 
 img {
@@ -16,7 +17,7 @@ img {
 }
 
 .detail {
-	min-height: 92vh;
+	min-height: 94vh;
 }
 
 .small {
@@ -30,13 +31,14 @@ img {
 }
 
 .headline {
-	font-size: 3.5vh;
+	font-family: sans-serif;
+	font-size: 16px;
 	margin-top: 2vh;
 	padding: 1vh 4vh;
 }
 
 .content {
-	font-size: 2.5vh;
+	font-size: 13px;
 	padding: 1vh 2vh;
 }
 
@@ -59,3 +61,53 @@ img {
 	max-height:25vh;
 	display: inline-block;
 }
+
+#menu {
+	width: 30vw;
+	background-color: yellow;
+	position:absolute;
+	bottom: 50vy;
+	left: 35vw;
+	display:none;
+}
+
+
+		.showLeft{  
+			background-color: #0d77b6 !important;
+			border:1px solid #0d77b6 !important;
+			text-shadow: none !important;
+			color:#fff !important;
+			padding:10px;
+		}
+		.icons li {
+		    background: none repeat scroll 0 0 #fff;
+		    height: 7px;
+		    width: 7px;
+		    line-height: 0;
+		    list-style: none outside none;
+		    margin-right: 15px;
+		    margin-top: 3px;
+		    vertical-align: top;
+		}	
+
+		.btn-left {
+		    left: 0.4em;
+		}
+		.btn-right {
+		    right: 0.4em;
+		}
+
+		.btn-left, .btn-right {
+		    position: absolute;
+		    top: 0.24em;
+		}
+		.linker{
+			text-decoration: none;
+			color: #fff;
+			background-color: #0d77b6 !important;
+			padding: 15px;
+			font-size: 20px;
+			margin: 200px auto;
+			display: block;
+			width: 200px;
+		}

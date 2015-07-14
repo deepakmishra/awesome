@@ -9,14 +9,6 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Contacts\"><param name=\"ios-package\" value=\"CDVContacts\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
                             "count": 1
                         },
@@ -25,19 +17,15 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Globalization\"><param name=\"ios-package\" value=\"CDVGlobalization\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"InAppBrowser\"><param name=\"ios-package\" value=\"CDVInAppBrowser\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Toast\"><param name=\"ios-package\" value=\"Toast\" /></feature>",
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
                             "count": 1
                         },
                         {
@@ -49,22 +37,12 @@
             },
             "framework": {
                 "parents": {
-                    "AddressBook.framework": [
-                        {
-                            "xml": true,
-                            "count": 1
-                        }
-                    ],
-                    "AddressBookUI.framework": [
-                        {
-                            "xml": true,
-                            "count": 1
-                        }
-                    ],
+                    "AddressBook.framework": [],
+                    "AddressBookUI.framework": [],
                     "CoreGraphics.framework": [
                         {
                             "xml": false,
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "CoreLocation.framework": [
@@ -73,13 +51,14 @@
                             "count": 1
                         }
                     ],
-                    "QuartzCore.framework": [
+                    "QuartzCore.framework": [],
+                    "SystemConfiguration.framework": [
                         {
-                            "xml": false,
+                            "xml": true,
                             "count": 1
                         }
                     ],
-                    "SystemConfiguration.framework": [
+                    "AudioToolbox.framework": [
                         {
                             "xml": true,
                             "count": 1
@@ -100,31 +79,22 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.example.hello"
-        },
-        "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "com.example.hello"
-        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.example.hello"
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.example.hello"
         },
-        "cordova-plugin-globalization": {
-            "PACKAGE_NAME": "com.example.hello"
-        },
         "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.example.hello"
-        },
-        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.example.hello"
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.example.hello"
         },
-        "nl.x-services.plugins.toast": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.example.hello"
+        },
+        "org.apache.cordova.dialogs": {
             "PACKAGE_NAME": "com.example.hello"
         },
         "org.apache.cordova.network-information": {

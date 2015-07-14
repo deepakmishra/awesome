@@ -1,5 +1,6 @@
 body {
 	text-transform: none;
+	font-family: serif;
 }
 
 img {
@@ -16,7 +17,7 @@ img {
 }
 
 .detail {
-	min-height: 92vh;
+	min-height: 94vh;
 }
 
 .small {
@@ -30,13 +31,14 @@ img {
 }
 
 .headline {
-	font-size: 3.5vh;
+	font-family: sans-serif;
+	font-size: 16px;
 	margin-top: 2vh;
 	padding: 1vh 4vh;
 }
 
 .content {
-	font-size: 2.5vh;
+	font-size: 13px;
 	padding: 1vh 2vh;
 }
 
@@ -58,4 +60,8 @@ img {
 	width:100vw;
 	max-height:25vh;
 	display: inline-block;
+}
+
+.bars-button {
+
 }
