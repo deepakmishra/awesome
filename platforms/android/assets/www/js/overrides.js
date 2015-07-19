@@ -2,69 +2,71 @@ var data_url = "http://jsonplaceholder.typicode.com/comments";
 var sample_image_urls = [
     "http://blogs-images.forbes.com/chriswright/files/2014/06/modi.jpg",
     "http://static.dnaindia.com/sites/default/files/2014/05/23/238900-modi-5.jpg",
-    "http://cdn3.whatculture.com/wp-content/uploads/2014/10/keibler-ass.jpg",
-    "http://www.pwpix.net/wp/wp-content/uploads/2015/03/paige-25617312-620x400.jpg",
-    "http://cdn3.whatculture.com/wp-content/uploads/2014/10/torrie-beach.jpg",
-    "http://cdn3.whatculture.com/wp-content/uploads/2014/10/maryse-hot.jpg",
-    "http://cdn3.whatculture.com/wp-content/uploads/2014/10/maria-kanellis-beach.jpg",
-    "http://cdn3.whatculture.com/wp-content/uploads/2014/10/aksana-hot.jpg",
-    "http://s10.postimg.org/dzg8pycll/0_Candice_Michelle_Nude_Playboy_Cover.jpg",
-    "http://s10.postimg.org/txktlpydl/0_Chyna_Nude_Playboy_Cover.jpg",
-    "http://s10.postimg.org/3vrzd6csp/0_Maria_Kanellis_Nude_Playboy_Cover.jpg",
-    "http://s10.postimg.org/wyautqog9/0_Maryse_Nude_Playboy_Cover.jpg",
-    "http://s2.postimg.org/v5b149lqh/kelly_dyer_sitting_on_bike_white_bikini.jpg",
-    "http://s10.postimg.org/qpgc8oc3t/0_Chyna_Nude_Playboy_Cover_b.jpg",
-    "http://s10.postimg.org/sq2qz4zt5/0_Sable_Nude_Playboy_Cover.jpg",
-    "http://cdn3.whatculture.com/wp-content/uploads/2014/10/trish-baby-shoot.jpg",
-    "http://s2.postimg.org/8w1qyzs5l/theresa_correa_red_bikini_laying_down.jpg",
-    "http://s2.postimg.org/ceqp2zc95/Jessica_Jane_topless_hand_bra.jpg",
-    "http://s2.postimg.org/ncym0w0uh/april_gutierrez_topless_hand_bra.jpg",
-    "http://s2.postimg.org/acu62wksp/Jennifer_Ellison_bent_over_boobs.jpg",
-    "http://s2.postimg.org/4j82lkzpl/Melyssa_Grace_hanging_boobs.jpg",
-    "http://s2.postimg.org/cghtfe6rt/Denise_Milani_boobs_bathing_suit.jpg",
-    "http://s2.postimg.org/fnb6502fd/brenda_lynn_shower.jpg",
-    "http://s2.postimg.org/hbgu80edl/Ayanna_Jordan_ass.jpg",
-    "http://s2.postimg.org/3st6eiq15/Christine_Mendoza_office_work.jpg",
-    "http://s2.postimg.org/a130rqw5l/green_bikini_boobs.jpg",
-    "http://cdn3.whatculture.com/wp-content/uploads/2014/10/bella-twins-hot.jpg",
-    "http://s27.postimg.org/x4fq7i3xv/Torrie_Wilson_Nude_Playboy.jpg",
-    "http://s27.postimg.org/mf21f8s4z/WWE_Maria...ude_Playboy.jpg",
-    "http://s27.postimg.org/bcwygsy2b/wwe_taryn_terrell_nude_diva.jpg",
-    "http://i57.tinypic.com/2w35gld.jpg",
-    "http://image.forumcommunity.it/9/3/9/9/0/6/9/1433781739.jpg",
-    "http://s27.postimg.org/y2w39sh9v/wwe_lana_nude_tits.jpg",
-    "http://cdn3.whatculture.com/wp-content/uploads/2014/02/Sable-Torrie-Kiss.gif",
-    "http://cdn3.whatculture.com/wp-content/uploads/2014/08/nattie-bikini.jpg",
-    "http://s10.postimg.org/u7po7y5sl/Gail_Kim_Nude_Photosaaaaa.jpg",
-    "http://www.bestnudeceleb.com/matrix/celeb1275/pics/maryse-ouellet-06.jpg",
-    "http://www.tittietittietittie.com/wwe-divas-naked/images/1maryse_nude1.jpg",
     "http://im.rediff.com/news/2011/mar/14slid1.jpg",
-    "http://im.rediff.com/sports/2015/jul/13paes2.jpg",
-    "http://2.bp.blogspot.com/-XLjc3w5HD_k/T7YIMKONNmI/AAAAAAAA0ug/-AyxLs7Rle0/s1600/Sunny-Leone-Topless-Photo-Shoot-Photos-170.jpg",
-    "http://i.imgur.com/B8ihiod.jpg",
-    "http://i.imgur.com/8Cixq0W.jpg",
-    "http://i.imgur.com/PmHmWcB.jpg",
-    "http://i.imgur.com/7fIClkG.jpg",
-    "http://i.imgur.com/UOZmIg5.jpg",
-    "http://i.imgur.com/78zBxzw.jpg",
-    "http://i.imgur.com/z3LMYKt.jpg",
-    "http://i.imgur.com/5MwH6rX.jpg",
-    "http://i.imgur.com/bqJLmbg.jpg",
-    "http://i.imgur.com/cMpKl6V.jpg",
-    "http://i.imgur.com/q4na79c.jpg",
-    "http://i.imgur.com/iZzs80d.jpg",
-    "http://i.imgur.com/xLbgf5z.jpg",
-    "http://i.imgur.com/PIfEoEm.jpg",
-    "http://i.imgur.com/cUQFZgb.jpg",
-    "http://i.imgur.com/OX6YgL9.jpg",
-    "http://i.imgur.com/cUQFZgb.jpg",
-    "https://www.lushstories.com/services/imageproxy.ashx?r=http%3a%2f%2f30.media.tumblr.com%2ftumblr_lcfn4veBDo1qbu9bqo1_400.jpg",
-    "https://www.lushstories.com/services/imageproxy.ashx?r=http%3a%2f%2fupload.lushstories.com%2f1108616401-Asian+(3).jpg",
-    "https://www.lushstories.com/services/imageproxy.ashx?r=http%3a%2f%2fupload.lushstories.com%2f1005901317-asian+(6).jpg",
-    "https://www.lushstories.com/services/imageproxy.ashx?r=http%3a%2f%2fupload.lushstories.com%2f2008046265-asian+(7).jpg",
-    "https://www.lushstories.com/services/imageproxy.ashx?r=http%3a%2f%2fupload.lushstories.com%2f416295625-asian+(8).jpg",
-    "https://www.lushstories.com/services/imageproxy.ashx?r=http%3a%2f%2fupload.lushstories.com%2f1330491456-Asian+(9).jpg",
-    "http://fap.to/images/49/646130397/celebrities-porn/WWE-Diva-Maryse-Ouellet-Naked-4.jpg"
+    "http://im.rediff.com/sports/2015/jul/13paes2.jpg"
+    /*    
+        "http://cdn3.whatculture.com/wp-content/uploads/2014/10/keibler-ass.jpg",
+        "http://www.pwpix.net/wp/wp-content/uploads/2015/03/paige-25617312-620x400.jpg",
+        "http://cdn3.whatculture.com/wp-content/uploads/2014/10/torrie-beach.jpg",
+        "http://cdn3.whatculture.com/wp-content/uploads/2014/10/maryse-hot.jpg",
+        "http://cdn3.whatculture.com/wp-content/uploads/2014/10/maria-kanellis-beach.jpg",
+        "http://cdn3.whatculture.com/wp-content/uploads/2014/10/aksana-hot.jpg",
+        "http://s10.postimg.org/dzg8pycll/0_Candice_Michelle_Nude_Playboy_Cover.jpg",
+        "http://s10.postimg.org/txktlpydl/0_Chyna_Nude_Playboy_Cover.jpg",
+        "http://s10.postimg.org/3vrzd6csp/0_Maria_Kanellis_Nude_Playboy_Cover.jpg",
+        "http://s10.postimg.org/wyautqog9/0_Maryse_Nude_Playboy_Cover.jpg",
+        "http://s2.postimg.org/v5b149lqh/kelly_dyer_sitting_on_bike_white_bikini.jpg",
+        "http://s10.postimg.org/qpgc8oc3t/0_Chyna_Nude_Playboy_Cover_b.jpg",
+        "http://s10.postimg.org/sq2qz4zt5/0_Sable_Nude_Playboy_Cover.jpg",
+        "http://cdn3.whatculture.com/wp-content/uploads/2014/10/trish-baby-shoot.jpg",
+        "http://s2.postimg.org/8w1qyzs5l/theresa_correa_red_bikini_laying_down.jpg",
+        "http://s2.postimg.org/ceqp2zc95/Jessica_Jane_topless_hand_bra.jpg",
+        "http://s2.postimg.org/ncym0w0uh/april_gutierrez_topless_hand_bra.jpg",
+        "http://s2.postimg.org/acu62wksp/Jennifer_Ellison_bent_over_boobs.jpg",
+        "http://s2.postimg.org/4j82lkzpl/Melyssa_Grace_hanging_boobs.jpg",
+        "http://s2.postimg.org/cghtfe6rt/Denise_Milani_boobs_bathing_suit.jpg",
+        "http://s2.postimg.org/fnb6502fd/brenda_lynn_shower.jpg",
+        "http://s2.postimg.org/hbgu80edl/Ayanna_Jordan_ass.jpg",
+        "http://s2.postimg.org/3st6eiq15/Christine_Mendoza_office_work.jpg",
+        "http://s2.postimg.org/a130rqw5l/green_bikini_boobs.jpg",
+        "http://cdn3.whatculture.com/wp-content/uploads/2014/10/bella-twins-hot.jpg",
+        "http://s27.postimg.org/x4fq7i3xv/Torrie_Wilson_Nude_Playboy.jpg",
+        "http://s27.postimg.org/mf21f8s4z/WWE_Maria...ude_Playboy.jpg",
+        "http://s27.postimg.org/bcwygsy2b/wwe_taryn_terrell_nude_diva.jpg",
+        "http://i57.tinypic.com/2w35gld.jpg",
+        "http://image.forumcommunity.it/9/3/9/9/0/6/9/1433781739.jpg",
+        "http://s27.postimg.org/y2w39sh9v/wwe_lana_nude_tits.jpg",
+        "http://cdn3.whatculture.com/wp-content/uploads/2014/02/Sable-Torrie-Kiss.gif",
+        "http://cdn3.whatculture.com/wp-content/uploads/2014/08/nattie-bikini.jpg",
+        "http://s10.postimg.org/u7po7y5sl/Gail_Kim_Nude_Photosaaaaa.jpg",
+        "http://www.bestnudeceleb.com/matrix/celeb1275/pics/maryse-ouellet-06.jpg",
+        "http://www.tittietittietittie.com/wwe-divas-naked/images/1maryse_nude1.jpg",
+        "http://2.bp.blogspot.com/-XLjc3w5HD_k/T7YIMKONNmI/AAAAAAAA0ug/-AyxLs7Rle0/s1600/Sunny-Leone-Topless-Photo-Shoot-Photos-170.jpg",
+        "http://i.imgur.com/B8ihiod.jpg",
+        "http://i.imgur.com/8Cixq0W.jpg",
+        "http://i.imgur.com/PmHmWcB.jpg",
+        "http://i.imgur.com/7fIClkG.jpg",
+        "http://i.imgur.com/UOZmIg5.jpg",
+        "http://i.imgur.com/78zBxzw.jpg",
+        "http://i.imgur.com/z3LMYKt.jpg",
+        "http://i.imgur.com/5MwH6rX.jpg",
+        "http://i.imgur.com/bqJLmbg.jpg",
+        "http://i.imgur.com/cMpKl6V.jpg",
+        "http://i.imgur.com/q4na79c.jpg",
+        "http://i.imgur.com/iZzs80d.jpg",
+        "http://i.imgur.com/xLbgf5z.jpg",
+        "http://i.imgur.com/PIfEoEm.jpg",
+        "http://i.imgur.com/cUQFZgb.jpg",
+        "http://i.imgur.com/OX6YgL9.jpg",
+        "http://i.imgur.com/cUQFZgb.jpg",
+        "https://www.lushstories.com/services/imageproxy.ashx?r=http%3a%2f%2f30.media.tumblr.com%2ftumblr_lcfn4veBDo1qbu9bqo1_400.jpg",
+        "https://www.lushstories.com/services/imageproxy.ashx?r=http%3a%2f%2fupload.lushstories.com%2f1108616401-Asian+(3).jpg",
+        "https://www.lushstories.com/services/imageproxy.ashx?r=http%3a%2f%2fupload.lushstories.com%2f1005901317-asian+(6).jpg",
+        "https://www.lushstories.com/services/imageproxy.ashx?r=http%3a%2f%2fupload.lushstories.com%2f2008046265-asian+(7).jpg",
+        "https://www.lushstories.com/services/imageproxy.ashx?r=http%3a%2f%2fupload.lushstories.com%2f416295625-asian+(8).jpg",
+        "https://www.lushstories.com/services/imageproxy.ashx?r=http%3a%2f%2fupload.lushstories.com%2f1330491456-Asian+(9).jpg",
+        "http://fap.to/images/49/646130397/celebrities-porn/WWE-Diva-Maryse-Ouellet-Naked-4.jpg"
+    */
 ];
 var sample_source_urls = [
     "http://www.financialexpress.com/article/economy/global-warming-may-eat-up-200-bn-crops-globally-by-2050-study/100410/",
@@ -98,7 +100,6 @@ var index = -1;
 var current_data, previous_data, next_data;
 var filters = {};
 var filter_order = [];
-
 $(document).on("pagecreate", "#home", function() {
     if (!navigator.onLine) {
         alert("You are not connected to internet");
@@ -109,7 +110,6 @@ $(document).on("pagecreate", "#home", function() {
         });
         return;
     }
-
     $.mobile.changePage.defaults.allowSamePageTransition = true;
     $.mobile.allowCrossDomainPages = true;
     $.mobile.phonegapNavigationEnabled = true;
@@ -121,7 +121,6 @@ $(document).on("pagecreate", "#home", function() {
     getData(false);
     showNext();
     $("#nav-rate-share").attr("href", getRateShareLink);
-
     $(".previous").on("click", showPrevious);
     $(".next").on("click", showNext);
     $(".current").swipe({
@@ -151,7 +150,7 @@ $(document).on("pagecreate", "#home", function() {
     });
     $(".navpanel a, .original a").on("click", function() {
         href = $(this).attr("href");
-        if(href[0] === '#') {
+        if (href[0] === '#') {
             $("#search-box").focus();
             $.mobile.changePage(href, {
                 transition: "slide",
@@ -175,7 +174,7 @@ $(document).on("pagecreate", "#home", function() {
         var filter_key = $(this).attr("id");
         $(this).on("pageshow", function() {
             $("#search-box").on("change keyup", function() {
-                if($(this).val().length === 0) {
+                if ($(this).val().length === 0) {
                     $("#search .center a").addClass("ui-disabled");
                 } else {
                     $("#search .center a").removeClass("ui-disabled");
@@ -317,7 +316,7 @@ function getData(reinit) {
 
 function applyFilter(filter_key, filter_value) {
     var filter_order_index = filter_order.indexOf(filter_key);
-    if(filter_order_index != -1) {
+    if (filter_order_index != -1) {
         filter_order.splice(filter_order_index, 1);
     }
     filter_order.push(filter_key);
@@ -341,5 +340,5 @@ function geo_error(error) {
 function geo_success(position) {
     geolocation.latitude = position.coords.latitude;
     geolocation.longitude = position.coords.longitude;
-    // alert(JSON.stringify(geolocation));
+    filters['location'] = geolocation.latitude + "," + geolocation.longitude;
 }
