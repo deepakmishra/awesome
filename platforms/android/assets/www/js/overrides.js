@@ -279,7 +279,7 @@ function getRateShareLink() {
     if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
         rateShareLink = "https://itunes.apple.com/us/app/YOUR-APP-SLUG-HERE/id000000000?mt=8&uo=4";
     } else if (navigator.userAgent.match(/Android/i)) {
-        rateShareLink = "market://details?id=com.facebook.katana";
+        rateShareLink = "market://details?id=com.and.awesummly";
     } else if (navigator.userAgent.match(/BlackBerry/i)) {
         rateShareLink = "http://appworld.blackberry.com/webstore/content/<applicationid>";
     }

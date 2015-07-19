@@ -96,7 +96,7 @@ var geolocation = {};
 var total_data = 0;
 var page_loaded = 0;
 var saved_data = [];
-var index = -1;
+var index = 0;
 var current_data, previous_data, next_data;
 var filters = {};
 var filter_order = [];
@@ -119,7 +119,7 @@ $(document).on("pagecreate", "#home", function() {
         enableHighAccuracy: false
     });
     getData(false);
-    showNext();
+    populatePage();
     $("#nav-rate-share").attr("href", getRateShareLink);
     $(".previous").on("click", showPrevious);
     $(".next").on("click", showNext);
@@ -279,7 +279,7 @@ function getRateShareLink() {
     if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
         rateShareLink = "https://itunes.apple.com/us/app/YOUR-APP-SLUG-HERE/id000000000?mt=8&uo=4";
     } else if (navigator.userAgent.match(/Android/i)) {
-        rateShareLink = "market://details?id=com.facebook.katana";
+        rateShareLink = "market://details?id=com.and.awesummly";
     } else if (navigator.userAgent.match(/BlackBerry/i)) {
         rateShareLink = "http://appworld.blackberry.com/webstore/content/<applicationid>";
     }
