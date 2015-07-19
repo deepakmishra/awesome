@@ -1,0 +1,8 @@
+    <div class="ui-field-contain">
+         <label for="text-15">Text input: data-clear-btn="true"</label>
+         <input type="text" data-clear-btn="true" data-mini="true" name="text-15" id="text-15" value="">
+    </div>
+    <div class="ui-field-contain">
+        <label for="search-9">Search:</label>
+        <input type="search" data-clear-btn="true" data-mini="true" name="search" id="search" placeholder="Search News" value="">
+    </div>
