@@ -301,7 +301,8 @@ function getData(reinit) {
         $.ajax({
             url: data_url,
             dataType: 'json',
-            data: filters,
+            // TODO :: uncomment
+            // data: filters,
             async: (page_loaded > 0 && !reinit),
             success: function(data) {
                 if (data.length > 0) {
