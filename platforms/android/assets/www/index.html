@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/overrides.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,800,700,400italic%7CPT+Serif:400,400italic%7CBree+Serif">
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
@@ -167,7 +166,8 @@
             <div data-role="content">
                 <div data-role="fieldcontain">
                     <input type="search" name="search" id="search-box" value="" data-theme="c" data-clear-btn="true" placeholder="Search News" data-mini="true"></input>
-                    <a data-role="button" data-inline="true" data-transition="pop" href="#" class="ui-disabled">Search</a>
+                    <a id="search-button" data-role="button" data-inline="true" data-transition="pop" href="#" class="ui-disabled">Search</a>
+                    <a id="reset-button" data-role="button" data-inline="true" data-transition="pop" href="#" class="ui-disabled">Reset</a>
                 </div>
             </div>
             <div data-theme="b" class="ad">

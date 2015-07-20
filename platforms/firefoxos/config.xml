@@ -27,4 +27,5 @@
     <feature name="Notification">
         <param name="firefoxos-package" value="Notification" />
     </feature>
+    <permission name="systemXHR" privileged="true" />
 </widget>

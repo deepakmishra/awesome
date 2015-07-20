@@ -98,10 +98,16 @@ var page_loaded = 0;
 var saved_data = [];
 var index = 0;
 var current_data, previous_data, next_data;
-var filters = {};
+var default_filters = {"category":"all", "geography":"world"};
+var filters = [].concat(default_filters);
 var filter_order = [];
+var old = false;
+
 $(document).on("pagecreate", "#home", function() {
-    if (!navigator.onLine) {
+
+    getData(true);
+    populatePage();
+    if (saved_data.length === 0) {
         alert("You are not connected to internet");
         $(document).on('click', function() {
             if (navigator.onLine) {
@@ -118,8 +124,6 @@ $(document).on("pagecreate", "#home", function() {
         timeout: 10000,
         enableHighAccuracy: false
     });
-    getData(false);
-    populatePage();
     $("#nav-rate-share").attr("href", getRateShareLink);
     $(".previous").on("click", showPrevious);
     $(".next").on("click", showNext);
@@ -175,16 +179,23 @@ $(document).on("pagecreate", "#home", function() {
         $(this).on("pageshow", function() {
             $("#search-box").on("change keyup", function() {
                 if ($(this).val().length === 0) {
-                    $("#search .center a").addClass("ui-disabled");
+                    $("#search-button").addClass("ui-disabled");
+                    $("#reset-button").addClass("ui-disabled");
                 } else {
-                    $("#search .center a").removeClass("ui-disabled");
+                    $("#search-button").removeClass("ui-disabled");
+                    $("#reset-button").removeClass("ui-disabled");
                 }
             });
-            $("#search-box").val(filters['filter_key']);
+            $("#search-box").val(filters[filter_key]);
             $("#search-box").trigger("change");
         });
-        $(this).find(".center a").on("click", function() {
+        $("#search-button").on("click", function() {
             var filter_value = $("#search-box").val();
+            applyFilter(filter_key, filter_value);
+            return false;
+        });
+        $("#reset-button").on("click", function() {
+            var filter_value = "";
             applyFilter(filter_key, filter_value);
             return false;
         });
@@ -215,9 +226,7 @@ function showNext() {
         if (index > (total_data - 5)) {
             getData(false);
         }
-        if (index % 2 === 0) {
-            populateCache();
-        }
+        populateCache();
     }
     return false;
 }
@@ -229,12 +238,12 @@ function populatePage() {
 }
 
 function populateCache() {
-    if (index < total_data - 3) {
+    if ((2 * index + 3) < total_data) {
         setTimeout(function() {
-            (new Image()).src = sample_image_urls[(index + 2) % sample_source_urls.length];
+            (new Image()).src = sample_image_urls[(2 * index + 2) % sample_source_urls.length];
         }, 500);
         setTimeout(function() {
-            (new Image()).src = sample_image_urls[(index + 3) % sample_source_urls.length];
+            (new Image()).src = sample_image_urls[(2 * index + 3) % sample_source_urls.length];
         }, 1000);
     }
 }
@@ -265,7 +274,7 @@ function populatePrevious() {
 }
 
 function populateNext() {
-    if (index === (total_data - 1)) {
+    if (index >= (total_data - 1)) {
         $(".next span.display").text($(".next span.backup").text());
     } else {
         next_data = saved_data[index + 1];
@@ -287,12 +296,13 @@ function getRateShareLink() {
 }
 
 function getData(reinit) {
+    reinit = (typeof(reinit) != 'undefined' && reinit);
     if (navigator.onLine) {
-        reinit = (typeof(reinit) != 'undefined' && reinit);
         $.ajax({
             url: data_url,
             dataType: 'json',
-            data: filters,
+            // TODO :: uncomment
+            // data: filters,
             async: (page_loaded > 0 && !reinit),
             success: function(data) {
                 if (data.length > 0) {
@@ -304,13 +314,27 @@ function getData(reinit) {
                     saved_data = saved_data.concat(data);
                     total_data = saved_data.length;
                     page_loaded++;
+                    setDataToFile();
+                    old = false;
                 } else {
                     alert("No result in found in your selection");
                 }
             }
         });
-    } else {
+    } else if (!(page_loaded > 0 && !reinit)) {
         alert("You are not connected to internet");
+        getDataFromFile();
+        if(saved_data.length === 0) {
+            filters = [].concat(default_filters);
+            getDataFromFile();
+        }
+        if(saved_data.length != 0) {
+            page_loaded = 1;
+            index = 0;
+            total_data = saved_data.length;
+            alert("Showing old data");
+            old = true;
+        }
     }
 }
 
@@ -319,7 +343,11 @@ function applyFilter(filter_key, filter_value) {
     if (filter_order_index != -1) {
         filter_order.splice(filter_order_index, 1);
     }
-    filter_order.push(filter_key);
+    if(filter_value && filter_value.length > 0) {
+        filter_order.push(filter_key);
+    } else {
+        delete filters[filter_key];
+    }
     filters['filter_order'] = filter_order.join();
     if (filters[filter_key] != filter_value) {
         // alert(filter_key + " : " + filter_value);
@@ -341,4 +369,51 @@ function geo_success(position) {
     geolocation.latitude = position.coords.latitude;
     geolocation.longitude = position.coords.longitude;
     filters['location'] = geolocation.latitude + "," + geolocation.longitude;
+}
+
+function getDataFromFile() {
+    data = JSON.parse(localStorage["data"]);
+    non_default_filters = getNonDefaultFilters();
+    if (non_default_filters.length > 0) {
+        data = $.grep(data, function(v) {
+            for (i = 0; i < non_default_filters.length; i++) {
+                if (v[non_default_filters[i]] != filters[non_default_filters[i]]) {
+                    return false;
+                }
+            }
+            return true;
+        });
+    }
+    saved_data = data;
+}
+
+function getNonDefaultFilters() {
+    non_default_filters = [];
+    $.each(default_filters, function(key, value) {
+        if (filters[key] && filters[key].toLowerCase() != value.toLowerCase()) {
+            non_default_filters.push(key);
+        }
+    });
+    return non_default_filters;
+}
+
+function setDataToFile() {
+    setTimeout(function() {
+        localStorage_data = JSON.parse(localStorage["data"]);
+        localStorage_data = unique(localStorage_data.concat(saved_data), "id");
+        localStorage["data"] = JSON.stringify(localStorage_data);
+    }, 1000);
+}
+
+function unique(object_array, id_field) {
+    ids = [];
+    unique_object_array = [];
+    object_array.forEach(function(object) {
+        id = object[id_field];
+        if(ids.indexOf(id) == -1) {
+            unique_object_array.push(object);
+            ids.push(id);
+        }
+    });
+    return unique_object_array;
 }
